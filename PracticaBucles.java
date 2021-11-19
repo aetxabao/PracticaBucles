@@ -36,10 +36,11 @@ public class PracticaBucles {
         int numeroPares = 0;
         int sumaImpares = 0;
         int media = 0;
+        int sumaTotal = 0; // intentar deshacerme de esta variable
         for (int i = n; i > 0; i--) {
-            randomNumber = (generador.nextInt(49001) - 1000);
+            randomNumber = (generador.nextInt(49001) - 1000); // Check que va bien
             System.out.printf("%12d:%5d", randomNumber, obtenerNumeroSinCeros(randomNumber));
-            media += randomNumber 
+            sumaTotal += randomNumber;
             if (esImpar(randomNumber)) {
                 numeroPares++;
             } else {
@@ -50,7 +51,7 @@ public class PracticaBucles {
             }
         }
         System.out.println("\n\n");
-        System.out.println("Fin");
+        System.out.println("Media : " + (sumaTotal/n)); // va
         
         
     }
