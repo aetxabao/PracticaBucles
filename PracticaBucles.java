@@ -1,6 +1,6 @@
 import java.util.Random;
 /**
- *    
+ *     @author Evelin Virunurm
  */
 public class PracticaBucles {
     private final char ESPACIO = ' ';
@@ -40,10 +40,7 @@ public class PracticaBucles {
      *  Hazlo sin utilizar if
      */
     public boolean esImpar(int numero)   {
-        //TODO
-        
-        
-        return  false;
+        return (numero % 2 == 0);
     }
 
     /**
