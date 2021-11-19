@@ -53,10 +53,22 @@ public class PracticaBucles {
      *   
      */
     public int obtenerNumeroSinCeros(int numero)   {
-        //TODO
+        String transformedNumberS = "";
+        String numeroS = numero + ""; 
         
+        for (int i = 0; i < numeroS.length(); i++) {
+            if (numeroS.charAt(i) != '0') {
+                transformedNumberS += numeroS.charAt(i);
+            }
+        }
         
-        return 0;
+        try {
+            return Integer.parseInt(transformedNumberS);
+        } catch (Exception e) {
+            System.out.print("Something went wrong, you may have wrote 0.");
+        }
+        
+        return numero;
     }
 
     /**
