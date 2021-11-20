@@ -4,6 +4,7 @@ import java.util.Scanner;
  * Incluye todo el código dentro del main()
  * No declares ningún nuevo método en esta clase ni atributos
  *  
+ *  @author -Sergio Cobos Lorca-
  */
 public class TestPracticaBucles
 {
@@ -23,12 +24,26 @@ public class TestPracticaBucles
      *  - muestra la letra N
      *  
      */
-    public static void main(String[] args)    {
-        //TODO
+    public static void main(String[] args){
+        Scanner teclado = new Scanner(System.in);
+        PracticaBucles practicaBucles = new PracticaBucles();
+        System.out.print("Dame nº máximo de aleatorios a generar (n > 0): ");
+        int nMax = teclado.nextInt();
+        while(nMax<=0){
+            System.out.print("Dame nº máximo de aleatorios a generar (n > 0): ");
+            nMax = teclado.nextInt();
+        }
+        practicaBucles.generarNumeros(nMax);
+        Utilidades.hacerPausa();
+        Utilidades.borrarPantalla();
         
-        
-        
-        
+        System.out.print("Teclea altura de la letra N (3 <=altura <=10) ");
+        int altura = teclado.nextInt();
+        while(altura < 3 || altura > 10){
+            System.out.print("Altura incorrecta, Teclea altura de la letra N (3 <=altura <=10) ");
+            altura = teclado.nextInt();
+        }
+        practicaBucles.escribirLetraN(altura);
     }
 }
 

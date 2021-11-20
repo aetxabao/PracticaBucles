@@ -1,6 +1,7 @@
 import java.util.Random;
 /**
  *    
+ *  @author -Sergio Cobos Lorca-
  */
 public class PracticaBucles {
     private final char ESPACIO = ' ';
@@ -10,7 +11,7 @@ public class PracticaBucles {
     /**
      * Constructor  
      */
-    public PracticaBucles()    {
+    public PracticaBucles(){
         generador = new Random();
     }
 
@@ -30,20 +31,50 @@ public class PracticaBucles {
      *  
      *   Utiliza solo bucles while
      */
-    public void generarNumeros(int n)   {
-       //TODO
-
+    public void generarNumeros(int n){
+        int numero = generador.nextInt(51001)-1000;
+        int veces = 0;
+        double media = 0;
+        int impares = 0;
+        int cont = 0;
+        int nMax = 0;
+        System.out.println("Nº máximo de aleatorios a generar: "+n+
+                           "\no hasta que salga el 0\n");
+        while(numero!=0 && veces<n){
+            numero = generador.nextInt(51001)-1000;
+            media += numero;
+            if(esImpar(numero)){
+                impares += numero;
+            }else{
+                if(nMax < numero){
+                    nMax = numero;
+                }
+            }
+            veces++;
+            System.out.printf("%12d:%5d",numero, obtenerNumeroSinCeros(numero));
+            cont++;
+            if(cont==5){
+                System.out.println();
+                cont=0;
+            }
+        }
+        media /= veces;
+        System.out.printf("\n\n%25s:%10.2f","Media",media);
+        System.out.printf("\n%25s:%10d","Suma impares",impares);
+        System.out.printf("\n%25s:%10d","Máximo pares",nMax);
     }
 
     /**
      *  Devuelve true si numero es impar, false en otro caso
      *  Hazlo sin utilizar if
      */
-    public boolean esImpar(int numero)   {
-        //TODO
-        
-        
-        return  false;
+    public boolean esImpar(int numero){
+        switch(numero%2){
+            case 0:
+                return false;
+            default:
+                return true;
+        }
     }
 
     /**
@@ -55,18 +86,29 @@ public class PracticaBucles {
      *   
      *   
      */
-    public int obtenerNumeroSinCeros(int numero)   {
-        //TODO
-        
-        
-        return 0;
+    public int obtenerNumeroSinCeros(int numero){
+        int n = 10;
+        int m = 1;
+        double r = numero%n/m;
+        int c = 0;
+        int exp = 0;
+        while(numero/m>=1 || numero/m<=-1){
+            r = numero%n/m;
+            c += r*(Math.pow(10,exp));
+            n *= 10;
+            m *= 10;
+            if(r>0 || r<0){
+                exp++;
+            }
+        }
+        return c;
     }
 
     /**
      *  Borrar la pantalla
      *
      */
-    public void borrarPantalla()    {
+    public void borrarPantalla(){
         System.out.println('\u000C');
     }
 
@@ -80,21 +122,25 @@ public class PracticaBucles {
      *  
      *   
      */
-    public void escribirLetraN(int altura)    {
-       //TODO
-
+    public void escribirLetraN(int altura){
+        System.out.println("Letra N - Altura: "+altura);
+        for(int filas = 0; filas<altura;filas++){
+            escribirCaracter(CARACTER, 1);
+            escribirCaracter(ESPACIO, filas);
+            escribirCaracter(CARACTER, 1);
+            escribirCaracter(ESPACIO, altura-1-filas);
+            escribirCaracter(CARACTER, 1);
+            System.out.println();
+        }
     }
 
     /**
      *  escribe n veces el caracter  indicado en la misma línea
      *  con bucles for
      */
-    private void escribirCaracter(char caracter, int n)    {
-       //TODO
-       
-       
-       
-       
+    private void escribirCaracter(char caracter, int n){
+        for(int i = 0; i<n;i++){
+            System.out.print(caracter);
+        }
     }
-
 }
