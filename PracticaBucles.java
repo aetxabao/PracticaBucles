@@ -89,30 +89,14 @@ public class PracticaBucles {
      *   
      */
     public int obtenerNumeroSinCeros(int numero) {
-        String transformedNumberS = "";
-        String numeroS = numero + "";
-        int i = 0;
-        while (i < numeroS.length()) {
-            if (numeroS.charAt(i) != '0') {
-                transformedNumberS += numeroS.charAt(i);
-            }
-            i++;
+        int num = numero;
+        int withoutZeros = 0;
+        int counter = 1;
+        while (num > 0) {
+            if (num % 10 != 0) {  withoutZeros += (num % 10) * counter; counter *= 10; }
+            num /= 10;
         }
-        /*for (int i = 0; i < numeroS.length(); i++) {
-            if (numeroS.charAt(i) != '0') {
-                transformedNumberS += numeroS.charAt(i);
-            }
-        }*/
-        // TODO Intentar hacer el método de la otra manera e si eso dejarlo comentado.
-
-
-
-
-        try {
-            return Integer.parseInt(transformedNumberS);
-        } catch (Exception e) {
-            return 0;
-        }
+        return withoutZeros;
 
     }
 
