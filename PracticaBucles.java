@@ -48,7 +48,7 @@ public class PracticaBucles {
                 sumaImpares += randomNumber;
             }
             if (randomNumber == 0) {break;}
-            if (i % 5 == 0 && i != 0) {
+            if ((i+1) % 5 == 0) {
                 System.out.println();
             }
             i++;
