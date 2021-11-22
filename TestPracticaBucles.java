@@ -24,11 +24,13 @@ public class TestPracticaBucles {
     public static void main(String[] args)    {
         int numerosAGenerar;
         int valorAlturaN;
+
         Scanner teclado = new Scanner(System.in);
         PracticaBucles practica = new PracticaBucles();
 
         // Generar numeros aleatorios.
         do {
+            System.out.println("Dame un nº máximo de aleatorioa a generar");
             numerosAGenerar = teclado.nextInt();
         } while (numerosAGenerar <= 0);
         practica.generarNumeros(numerosAGenerar);

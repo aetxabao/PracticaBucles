@@ -31,13 +31,13 @@ public class PracticaBucles {
      *   Utiliza solo bucles while
      */
     public void generarNumeros(int n) {
-        int randomNumber;
+        int randomNumber; // = generador.nextInt(6001) - 1000;
         int maximoPares = 0;
         int sumaImpares = 0;
         double sumaTotal = 0;
         int i = 0;
         while (i < n) {
-            randomNumber = generador.nextInt(49001) - 1000;
+            randomNumber = generador.nextInt(6001) - 1000;
             System.out.printf("%12d:%5d", randomNumber, obtenerNumeroSinCeros(randomNumber));
             sumaTotal += randomNumber;
             if (esImpar(randomNumber)) {
@@ -47,6 +47,7 @@ public class PracticaBucles {
             } else {
                 sumaImpares += randomNumber;
             }
+            if (randomNumber == 0) {break;}
             if (i % 5 == 0 && i != 0) {
                 System.out.println();
             }
@@ -92,6 +93,17 @@ public class PracticaBucles {
         int num = numero;
         int withoutZeros = 0;
         int counter = 1;
+
+        if (num < 0) {
+            num *= -1;
+            while (num > 0) {
+                if (num % 10 != 0) {  withoutZeros += (num % 10) * counter; counter *= 10; }
+                num /= 10;
+            }
+            // num *= -1;
+            return (withoutZeros *= -1);
+        }
+
         while (num > 0) {
             if (num % 10 != 0) {  withoutZeros += (num % 10) * counter; counter *= 10; }
             num /= 10;
