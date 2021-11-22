@@ -1,6 +1,6 @@
 import java.util.Random;
 /**
- *     @author 
+ *     @author Carlos Alonso
  */
 public class PracticaBucles {
     private final char ESPACIO = ' ';
@@ -10,7 +10,8 @@ public class PracticaBucles {
     /**
      * Constructor  
      */
-    public PracticaBucles()    {
+    public PracticaBucles()    
+    {
         generador = new Random();
     }
 
@@ -30,24 +31,30 @@ public class PracticaBucles {
      *  
      *   Utiliza solo bucles while
      */
-    public void generarNumeros(int n) {
+    public void generarNumeros(int n) 
+    {
         int randomNumber;
         int maximoPares = 0;
         int sumaImpares = 0;
         double sumaTotal = 0;
         int i = 0;
-        while (i < n) {
+        while (i < n) 
+        {
             randomNumber = generador.nextInt(49001) - 1000;
             System.out.printf("%12d:%5d", randomNumber, obtenerNumeroSinCeros(randomNumber));
             sumaTotal += randomNumber;
-            if (esImpar(randomNumber)) {
-                if (maximoPares < randomNumber) {
+            if (esImpar(randomNumber)) 
+            {
+                if (maximoPares < randomNumber) 
+                {
                     maximoPares = randomNumber;
                 }
-            } else {
+            } else
+            {
                 sumaImpares += randomNumber;
             }
-            if (i % 5 == 0 && i != 0) {
+            if (i % 5 == 0 && i != 0) 
+            {
                 System.out.println();
             }
             i++;
@@ -61,7 +68,8 @@ public class PracticaBucles {
      *  Devuelve true si numero es impar, false en otro caso
      *  Hazlo sin utilizar if
      */
-    public boolean esImpar(int numero)   {
+    public boolean esImpar(int numero)  
+    {
         return (numero % 2 != 0);
     }
 
@@ -74,11 +82,13 @@ public class PracticaBucles {
      *   
      *   
      */
-    public int obtenerNumeroSinCeros(int numero) {
+    public int obtenerNumeroSinCeros(int numero) 
+    {
         int num = numero;
         int sinCeros = 0;
         int c = 1;
-        while (num > 0) {
+        while (num > 0) 
+        {
             if (num % 10 != 0) {sinCeros += (num % 10) * c; c *= 10;}
             num /= 10;
         }
@@ -91,7 +101,8 @@ public class PracticaBucles {
      *  Borrar la pantalla
      *
      */
-    public void borrarPantalla() {
+    public void borrarPantalla() 
+    {
         System.out.println('\u000C');
     }
 
@@ -105,9 +116,11 @@ public class PracticaBucles {
      *  
      *   
      */
-    public void escribirLetraN(int altura) {
+    public void escribirLetraN(int altura) 
+    {
         System.out.println("Letra N - Altura: " + altura);
-        for (int i = 0; i < altura; i++) {
+        for (int i = 0; i < altura; i++) 
+        {
             escribirCaracter(CARACTER,1);
             escribirCaracter(ESPACIO, i);
             escribirCaracter(CARACTER,1);
@@ -122,7 +135,8 @@ public class PracticaBucles {
      *  escribe n veces el caracter  indicado en la misma línea
      *  con bucles for
      */
-    private void escribirCaracter(char caracter, int n) {
+    private void escribirCaracter(char caracter, int n) 
+    {
         for (int i = 0; i < n; i++) {
             System.out.print(caracter);
         }
