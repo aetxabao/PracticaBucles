@@ -41,9 +41,7 @@ public class PracticaBucles {
      */
     public boolean esImpar(int numero)   {
         //TODO
-        
-        
-        return  false;
+        return numero % 2 == 1;//Si el resto es 1, el numero es impar, devuelve true.
     }
 
     /**
@@ -57,9 +55,24 @@ public class PracticaBucles {
      */
     public int obtenerNumeroSinCeros(int numero)   {
         //TODO
-        
-        
-        return 0;
+        //char admite numeros
+        //Bucle que nos permita movernos en la cifra para comprobar si es un 0
+       int pos = 1;
+       int resul = 0;
+       int divisor = 10;
+       int aux = numero;
+       while(aux > 0) {
+           if (aux / divisor != 0) {
+               resul += aux / divisor * pos;
+           }
+
+           aux %= divisor;
+           pos *= divisor;
+
+
+       }
+
+        return resul;
     }
 
     /**
