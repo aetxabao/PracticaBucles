@@ -23,10 +23,16 @@ public class TestPracticaBucles
      *  - muestra la letra N
      *  
      */
-    public static void main(String[] args)    {
+
+    public static void main(String[] args)
+    {
         //TODO
+       Scanner teclado = new Scanner(System.in);
         
-        
+       PracticaBucles miPractica = new PracticaBucles();
+       //System.out.printf("\n%d\n\n", miPractica.obtenerNumeroSinCeros(-1206));
+        miPractica.generarNumeros(16);
+
         
         
     }
