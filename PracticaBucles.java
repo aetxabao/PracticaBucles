@@ -31,7 +31,7 @@ public class PracticaBucles {
      *   Utiliza solo bucles while
      */
     public void generarNumeros(int n)   {
-       int numero = generador.nextInt(51001)-1000;
+       int numero = generador.nextInt(5001)-1000;
        int veces = 0;
        double media = 0;
        int impares = 0;
