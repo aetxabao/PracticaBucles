@@ -86,11 +86,11 @@ public class PracticaBucles {
      *   
      */
     public int obtenerNumeroSinCeros(int numero)   {
-        int c0 = (int)(numero / 10000);//
-        int c1 = (int)((numero / 1000)%10); //primera cifra de izquierda a derecha
-        int c2 = (int)((numero / 100) % 10); //segunda cifra de izquierda a derecha
-        int c3 = (int)((numero / 10) % 10); //tercera cifra de izquierda a derecha
-        int c4 = (int)(numero % 10); //cuarta cifra de izquierda a derecha
+        int c0 = (int)(numero / 10000);//primera cifra de izquierda a derecha
+        int c1 = (int)((numero / 1000)%10); //segunda cifra de izquierda a derecha
+        int c2 = (int)((numero / 100) % 10); //tercera cifra de izquierda a derecha
+        int c3 = (int)((numero / 10) % 10); //cuarta cifra de izquierda a derecha
+        int c4 = (int)(numero % 10); //quinta cifra de izquierda a derecha
         
         if(c0 == 0 && c1 == 0 && c2 == 0 && c3 == 0 && c4 != 0 ){
             numero = c4;
