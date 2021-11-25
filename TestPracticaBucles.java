@@ -24,11 +24,24 @@ public class TestPracticaBucles
      *  
      */
     public static void main(String[] args)    {
-        //TODO
-        
-        
-        
-        
+        Scanner teclado = new Scanner(System.in);
+        PracticaBucles practicaBucles = new PracticaBucles();
+        System.out.println("Dame nº máximo de aleatorios a generar (nº > 0): ");
+        int cantidad = teclado.nextInt();
+        while (cantidad <= 0) {
+            System.out.println("Dame nº máximo de aleatorios a generar (nº > 0): ");
+            cantidad = teclado.nextInt();
+        }
+        practicaBucles.generarNumeros(cantidad);
+        Utilidades.hacerPausa();
+        Utilidades.borrarPantalla();
+        System.out.println("Teclea altura de la letra N (3 <= altura <= 10): ");
+        int altura = teclado.nextInt();
+        while (altura < 3 || altura > 10) {
+            System.out.println("Altura incorrecta, Teclea la altura de la letra N (3 <= altura <= 10): ");
+            altura = teclado.nextInt();
+        }
+        practicaBucles.escribirLetraN(altura);
     }
 }
 
