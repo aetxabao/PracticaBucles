@@ -1,6 +1,8 @@
 import java.util.Random;
 /**
  *    
+ *    Carlos Conde Zudaire
+ *    
  */
 public class PracticaBucles {
     private final char ESPACIO = ' ';
@@ -30,8 +32,35 @@ public class PracticaBucles {
      *  
      *   Utiliza solo bucles while
      */
-    public void generarNumeros(int n)   {
-       //TODO
+    public void generarNumeros(int n){
+        int num = generador.nextInt(6001) - 1000;
+        int valor = 0;
+        double media = 0.0;
+        int impar = 0;
+        int numMax = 0;
+        int salto = 1;
+        while(num != 0 && valor != n){
+            num = generador.nextInt(6001) - 1000;
+            media += num;
+            if(num % 2 != 0){
+                impar += num;
+            }
+            else if(num % 2 == 0){
+                if(num > numMax){
+                    numMax = num;
+                }
+            }
+            System.out.printf("%12d:%5d", num, obtenerNumeroSinCeros(num));
+            if(salto == 5){
+                System.out.println();
+            }
+            salto++;
+            valor++;
+        }
+        System.out.println();
+        System.out.println("Media: " + media);
+        System.out.println("Suma impares: " + impar);
+        System.out.println("Maximo pares: " + numMax);
 
     }
 
@@ -41,9 +70,7 @@ public class PracticaBucles {
      */
     public boolean esImpar(int numero)   {
         //TODO
-        
-        
-        return  false;
+        return numero % 2 != 0;
     }
 
     /**
@@ -57,9 +84,24 @@ public class PracticaBucles {
      */
     public int obtenerNumeroSinCeros(int numero)   {
         //TODO
-        
-        
-        return 0;
+        int z = 0;
+        int x = 10;
+        int y = 1;
+        while(numero > 0){
+            if(numero % x != 0){
+                z += (numero % x) * y;
+                y *= x;
+            }
+            numero /= x;
+        }
+        while(numero < 0){
+            if(numero % x != 0){
+                z += (numero % x) * y;
+                y *= x;
+            }
+            numero /= x;
+        }
+        return z;
     }
 
     /**
@@ -81,8 +123,16 @@ public class PracticaBucles {
      *   
      */
     public void escribirLetraN(int altura)    {
-       //TODO
-
+        //TODO
+        System.out.println("Letra N - Altura: " + altura);
+        for(int f = 0; f < altura; f++){
+            escribirCaracter(CARACTER, 0);
+            escribirCaracter(ESPACIO, f);
+            escribirCaracter(CARACTER, 0);
+            escribirCaracter(ESPACIO, altura-f);
+            escribirCaracter(CARACTER, 0);
+            System.out.println();
+        }
     }
 
     /**
@@ -90,11 +140,9 @@ public class PracticaBucles {
      *  con bucles for
      */
     private void escribirCaracter(char caracter, int n)    {
-       //TODO
-       
-       
-       
-       
+        //TODO
+        for(int c = 0; c <= n; c++){
+            System.out.print(caracter);
+        }
     }
-
 }

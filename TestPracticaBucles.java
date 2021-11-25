@@ -23,11 +23,30 @@ public class TestPracticaBucles
      *  - muestra la letra N
      *  
      */
-    public static void main(String[] args)    {
+    public static void main(String[] args){
         //TODO
+        Scanner teclado = new Scanner(System.in);
+        PracticaBucles practicaBucle = new PracticaBucles();
+        System.out.println("Dame nº máximo de aleatorios a generar");
+        int cantidad = teclado.nextInt();
         
+        while(cantidad <= 0){
+            System.out.println("Dame un valor mayor que 0");
+            cantidad++;
+        }
         
+        practicaBucle.generarNumeros(cantidad);
+        Utilidades.hacerPausa();
+        Utilidades.borrarPantalla();
+        System.out.println("Teclea altura de la letra N");
+        int valor = teclado.nextInt();
         
+        while(valor < 3 || valor > 10){
+            System.out.println("Dame un valor entre el 3 y 10");
+            valor = teclado.nextInt();
+        }
+        
+        practicaBucle.escribirLetraN(valor);
         
     }
 }
