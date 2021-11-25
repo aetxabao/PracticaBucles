@@ -31,8 +31,37 @@ public class PracticaBucles {
      *   Utiliza solo bucles while
      */
     public void generarNumeros(int n)   {
-       //TODO
+        //DONE
+        Random generaNumeros = new Random();
+        int total = 0;
+        int sumaImpares = 0;
+        int maximoPares = -1001;
+        int contador = 0;//Cuenta el total de numeros
+        while(contador < n) {
+            int cuentaFila = 0;//Cuenta los numeros de cada fila
+            while (cuentaFila < 5 && contador < n){
+                int elNumero = generaNumeros.nextInt(6001) - 1000;
+                System.out.print(elNumero+"\t");
+                cuentaFila++;
+                contador++;
+                total = total + elNumero;
+                if(elNumero % 2 != 0){
+                    sumaImpares += elNumero;
+                }else if(elNumero > maximoPares){
+                    maximoPares = elNumero;
 
+                }
+            }
+            System.out.println();
+
+        }
+        System.out.println("La media "+total/n);
+        System.out.println("La suma de impares es "+ sumaImpares);
+        if (maximoPares != -1001) {
+            System.out.println("El maximo de pares es " + maximoPares);
+        }else{
+            System.out.println("No han salido numeros pares");
+        }
     }
 
     /**
@@ -40,7 +69,7 @@ public class PracticaBucles {
      *  Hazlo sin utilizar if
      */
     public boolean esImpar(int numero)   {
-        //TODO
+        //DONE
         return numero % 2 == 1;//Si el resto es 1, el numero es impar, devuelve true.
     }
 
@@ -54,24 +83,21 @@ public class PracticaBucles {
      *   
      */
     public int obtenerNumeroSinCeros(int numero)   {
-        //TODO
+        //DONE
         //char admite numeros
         //Bucle que nos permita movernos en la cifra para comprobar si es un 0
-       int pos = 1;
-       int resul = 0;
-       int divisor = 10;
-       int aux = numero;
-       while(aux > 0) {
-           if (aux / divisor != 0) {
-               resul += aux / divisor * pos;
-           }
+        int pos = 1;
+        int resul = 0;
+        int divisor = 10;
+        // int aux = numero;
+        while(numero > 0){
+            if (numero % divisor != 0) {
+                resul += numero % divisor * pos;
+                pos *= divisor;
+            }
+            numero /= divisor;
 
-           aux %= divisor;
-           pos *= divisor;
-
-
-       }
-
+        }
         return resul;
     }
 
@@ -94,7 +120,14 @@ public class PracticaBucles {
      *   
      */
     public void escribirLetraN(int altura)    {
-       //TODO
+        //DONE
+        for (int i = 0; i < altura;i++){
+            System.out.print(CARACTER);
+            escribirCaracter(ESPACIO,i);
+            System.out.print(CARACTER);
+            escribirCaracter(ESPACIO,altura - i-1);
+            System.out.println(CARACTER);
+        }
 
     }
 
@@ -103,11 +136,9 @@ public class PracticaBucles {
      *  con bucles for
      */
     private void escribirCaracter(char caracter, int n)    {
-       //TODO
-       
-       
-       
-       
+        //Done
+        for (int i = 1;i <= n;i++){
+            System.out.print(caracter);
+        }
     }
-
 }

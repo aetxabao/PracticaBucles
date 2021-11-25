@@ -25,10 +25,29 @@ public class TestPracticaBucles
      */
     public static void main(String[] args)    {
         //TODO
-        
-        
-        
-        
+        PracticaBucles demo = new PracticaBucles();
+        //demo.obtenerNumeroSinCeros(2040);
+        //System.out.print(demo.obtenerNumeroSinCeros(2040));
+
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.println("¿Cuantos numeros quieres generar?");
+        int numeroLegal = teclado.nextInt();
+        while(numeroLegal <= 0){
+            System.out.println("El numero tiene que ser positivo");
+            numeroLegal = teclado.nextInt();
+        }
+        demo.generarNumeros(numeroLegal);
+        Utilidades.hacerPausa();
+        Utilidades.borrarPantalla();
+
+        System.out.println("¿De que altura quieres la N?");
+        int alturaLegal = teclado.nextInt();
+        while(alturaLegal < 3 || alturaLegal > 10){
+            System.out.println("El numero tiene que ser mayor que 3 y menor que 10");
+            alturaLegal = teclado.nextInt();
+        }
+        demo.escribirLetraN(alturaLegal);
     }
 }
 
