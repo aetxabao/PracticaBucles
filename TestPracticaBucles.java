@@ -4,6 +4,7 @@ import java.util.Scanner;
  * Incluye todo el código dentro del main()
  * No declares ningún nuevo método en esta clase ni atributos
  *  
+ * @author - Joan Garcia
  */
 public class TestPracticaBucles
 {
@@ -25,10 +26,30 @@ public class TestPracticaBucles
      */
     public static void main(String[] args)    {
         //TODO
-        
-        
-        
-        
+        Scanner teclado = new Scanner(System.in);
+
+        PracticaBucles ob1 = new PracticaBucles();
+
+        int maximo = 0;
+        while(maximo <= 0){
+            System.out.print("Dame nº maximo de aleatorios a generar (n > 0): ");
+            maximo = teclado.nextInt();
+        }
+
+        ob1.generarNumeros(maximo);
+
+        Utilidades.hacerPausa();
+        Utilidades.borrarPantalla();
+
+        System.out.print("Teclea altura de la letra N (3<= Alura <=10)");
+        int altura = teclado.nextInt();
+        while(altura < 3 || altura > 10){
+            System.out.print("Altura Incorrecta, Teclea altura de la letra N (3<= Alura <=10): ");
+            altura = teclado.nextInt();
+        }
+
+        ob1.escribirLetraN(altura);
+
     }
 }
 
