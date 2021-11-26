@@ -82,7 +82,6 @@ public class PracticaBucles
         System.out.printf("\n%13s%12.2f", "Media:", suma / n);
         System.out.printf("\n%13s%12.2f", "Suma impares:", sumaImpares);
         System.out.printf("\n%13s%12.2f", "Maximo pares:", maximoPares);
-        Utilidades.hacerPausa();
     }
 
     /**
@@ -148,8 +147,16 @@ public class PracticaBucles
      */
     public void escribirLetraN(int altura)
     {
-       //TODO
-
+        System.out.print("\n\n");
+        for(int fila = 0; fila < altura; fila++)
+        {
+            escribirCaracter(CARACTER, 1);
+            escribirCaracter(ESPACIO, fila);
+            escribirCaracter(CARACTER, 1);
+            escribirCaracter(ESPACIO, altura - fila - 1);
+            escribirCaracter(CARACTER, 1);
+            System.out.println();
+        }
     }
 
     /**
@@ -158,11 +165,10 @@ public class PracticaBucles
      */
     private void escribirCaracter(char caracter, int n)
     {
-       //TODO
-       
-       
-       
-       
+        for(int i = 0; i < n; i++)
+        {
+            System.out.print(caracter);
+        }
     }
 
 }
