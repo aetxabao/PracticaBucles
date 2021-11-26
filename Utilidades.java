@@ -1,5 +1,6 @@
 import java.util.Scanner;
 /**
+ * Iñigo salinas
  *   Clase de utilidades
  *   Incluye métodos estáticos
  */
