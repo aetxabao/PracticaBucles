@@ -32,10 +32,10 @@ public class TestPracticaBucles
 
         // Generar numeros aleatorios.
         
-        do
-        {
+        
+        
             numerosAGenerar = teclado.nextInt();
-        }
+        
         while (numerosAGenerar <= 0);
         practica.generarNumeros(numerosAGenerar);
 
@@ -43,10 +43,10 @@ public class TestPracticaBucles
         Utilidades.borrarPantalla();
 
         // Imprimir N con una altura especifica.
-        do
-        {
+        
+        
             valorAlturaN = teclado.nextInt();
-        }
+        
         while (valorAlturaN < 3 || valorAlturaN > 10);
         practica.escribirLetraN(valorAlturaN);
     }
