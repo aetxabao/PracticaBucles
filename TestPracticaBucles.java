@@ -25,10 +25,21 @@ public class TestPracticaBucles
      */
     public static void main(String[] args)    {
         //TODO
+        Scanner teclado = new Scanner(System.in);
+        PracticaBucles practicaBucles = new PracticaBucles();
+        int cantidad = 0;
+        int altura = 0;
+        System.out.println("Genera cantidad maxima de aleatorios");
         
+        cantidad = teclado.nextInt();
         
+        Utilidades.hacerPausa();
+        Utilidades.borrarPantalla();
         
-        
+        System.out.println("Dame un valor: ");
+        if(altura <=3 || altura >=10){
+            altura= teclado.nextInt();
+        }
     }
 }
 

@@ -32,7 +32,17 @@ public class PracticaBucles {
      */
     public void generarNumeros(int n)   {
        //TODO
-
+       double media = 0;
+       int suma = 0;
+       int maximo = 0;
+       int contar = 0;
+       n = generador.nextInt(51000)-1000;
+       while(n %2 !=0){
+           suma += n;
+       }
+       suma += generador.nextInt();
+       contar++;
+       System.out.println("Media: " + media);
     }
 
     /**
@@ -41,7 +51,9 @@ public class PracticaBucles {
      */
     public boolean esImpar(int numero)   {
         //TODO
-        
+        while(numero % 2 != 0){
+            return true;
+        }
         
         return  false;
     }
