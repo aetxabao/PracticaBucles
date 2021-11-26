@@ -25,7 +25,27 @@ public class TestPracticaBucles
      */
     public static void main(String[] args)    {
         //TODO
-        
+      Scanner teclado = new Scanner(System.in);
+      PracticaBucles practicabucles = new PracticaBucles();
+      System.out.print("Introduce el numero aleatorios máximo a generar: ");
+      int numRandom = teclado.nextInt();
+
+      while (numRandom <= 0) {
+        System.out.print("Numero introducido incorrecto, intentalo de nuevo: ");
+        numRandom = teclado.nextInt();
+      }
+
+      practicabucles.generarNumeros(numRandom);
+
+      System.out.print("Introduce la altura de la letra N (3 <= altura <= 10): ");
+      int altura = teclado.nextInt();
+
+      while (altura < 3 || altura > 10) {
+        System.out.print("Numero introducido incorrecto, intentalo de nuevo: ");
+        altura = teclado.nextInt();
+      }
+
+      practicabucles.escribirLetraN(altura);
         
         
         

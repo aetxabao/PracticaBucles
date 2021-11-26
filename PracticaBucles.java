@@ -32,7 +32,43 @@ public class PracticaBucles {
      */
     public void generarNumeros(int n)   {
        //TODO
+        int sumaNum = 0, sumaImp = 0;
+       int numeroRandom = generador.nextInt(51000+1)-1000;
+       int media;
+       int i = 0;
+       int maxPares = -1001;
 
+       if(!esImpar(numeroRandom)){
+          maxPares = numeroRandom;
+       }
+
+       while(i<n && numeroRandom != 0){
+           sumaNum += numeroRandom;
+
+           if(esImpar(numeroRandom) ){
+              sumaImp += numeroRandom;
+           }
+           else {
+               if (maxPares < numeroRandom) {
+                maxPares = numeroRandom;
+               }
+           }
+
+           i++; 
+
+           if (i % 5 == 0) {
+             System.out.println();
+           }
+           System.out.print("            " + numeroRandom + ":   " + numeroRandom);
+
+           numeroRandom = generador.nextInt(51000+1)-1000;
+       }
+
+        media = sumaNum / n;
+
+       System.out.println("\n                         Media:          " + media);
+       System.out.println("                         Suma impares:          " + sumaImp);
+       System.out.println("                         Máximo pares:          " + maxPares);
     }
 
     /**
@@ -42,8 +78,14 @@ public class PracticaBucles {
     public boolean esImpar(int numero)   {
         //TODO
         
+        {
+        //TODO
+        while ( numero % 2 != 0 ){
+           return true; 
+        }
+        return false;
         
-        return  false;
+        }
     }
 
     /**
@@ -82,7 +124,14 @@ public class PracticaBucles {
      */
     public void escribirLetraN(int altura)    {
        //TODO
-
+       for (int i = 0; i < altura; i++) {
+        escribirCaracter('@', 1);
+        escribirCaracter(' ', i);
+        escribirCaracter('@', 1);
+        escribirCaracter(' ', altura - i - 1);
+        escribirCaracter('@', 1);
+        System.out.println();
+      }
     }
 
     /**
@@ -91,7 +140,9 @@ public class PracticaBucles {
      */
     private void escribirCaracter(char caracter, int n)    {
        //TODO
-       
+       for (int i = 0; i < n; i++) {
+        System.out.print(caracter);
+      }
        
        
        
