@@ -1,6 +1,6 @@
 import java.util.Random;
 /**
- *    
+ *    @author David Orayen
  */
 public class PracticaBucles {
     private final char ESPACIO = ' ';
@@ -15,7 +15,7 @@ public class PracticaBucles {
     }
 
     /**
-     *  El método  genera  números aleatorios  entre -1000 y 5000 (inclusive)
+     *  El método  genera  números aleatorios  entre -1000 y 50000 (inclusive)
      *  y calcula y escribe:
      *      - la media de todos los números
      *      - la suma de los impares
@@ -31,8 +31,38 @@ public class PracticaBucles {
      *   Utiliza solo bucles while
      */
     public void generarNumeros(int n)   {
-       //TODO
-
+        
+        int aleatorio = generador.nextInt(51001)-1000;
+        int cantidad = 0;
+        double media = 0;
+        int sumaImpar= 0;
+        int maxPar = 0;
+        int otraLinea = 0;
+        while(aleatorio <= n && aleatorio != 0){
+            aleatorio =  generador.nextInt(51001)-1000;
+            media = media + aleatorio;
+            
+            if(aleatorio % 2 == 0 ){
+                if(aleatorio > maxPar){
+                    maxPar = aleatorio;
+                }
+            }else{
+                if(aleatorio % 2 != 0){
+                    sumaImpar = sumaImpar + aleatorio;
+                }
+            }
+            System.out.printf("%12d:%5d", aleatorio, obtenerNumeroSinCeros(aleatorio));
+            if(otraLinea % 5 == 0){
+                System.out.println();
+            }
+            otraLinea++;
+            cantidad++;
+            
+        }
+        System.out.println();
+        System.out.println("Media : " + media);
+        System.out.println("Suma impares: " + sumaImpar);
+        System.out.println("Maximo pares: " + maxPar);
     }
 
     /**
@@ -40,10 +70,11 @@ public class PracticaBucles {
      *  Hazlo sin utilizar if
      */
     public boolean esImpar(int numero)   {
-        //TODO
         
-        
-        return  false;
+        while(numero % 2 == 0 ){
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -57,9 +88,18 @@ public class PracticaBucles {
      */
     public int obtenerNumeroSinCeros(int numero)   {
         //TODO
-        
-        
-        return 0;
+        int pos = 1;
+        int resultado = 0;
+        int div = 10;
+
+        while(numero > 0){
+            if(numero % div != 0){
+                resultado = resultado + (numero % div * pos);
+                pos = pos * div;
+            }
+            numero = numero / div;
+        }
+        return resultado;
     }
 
     /**
@@ -81,8 +121,16 @@ public class PracticaBucles {
      *   
      */
     public void escribirLetraN(int altura)    {
-       //TODO
-
+        System.out.println("Letra N - Altura: "+ altura);
+        
+        for(int i = 0; i < altura; i++){
+            escribirCaracter(CARACTER, 1);
+            escribirCaracter(ESPACIO, i);
+            escribirCaracter(CARACTER, 1);
+            escribirCaracter(ESPACIO, (altura-1)-i);
+            escribirCaracter(CARACTER, 1);
+            System.out.println();
+        }
     }
 
     /**
@@ -90,11 +138,8 @@ public class PracticaBucles {
      *  con bucles for
      */
     private void escribirCaracter(char caracter, int n)    {
-       //TODO
-       
-       
-       
-       
+        for(int i = 0; i<n;i++){
+            System.out.print(caracter);
+        }
     }
-
 }

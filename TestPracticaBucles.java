@@ -3,7 +3,8 @@ import java.util.Scanner;
 /**
  * Incluye todo el código dentro del main()
  * No declares ningún nuevo método en esta clase ni atributos
- *  
+ * 
+ *  @author David Orayen
  */
 public class TestPracticaBucles
 {
@@ -25,10 +26,29 @@ public class TestPracticaBucles
      */
     public static void main(String[] args)    {
         //TODO
+        Scanner teclado = new Scanner(System.in);
+        PracticaBucles pruebas = new PracticaBucles();
         
+        System.out.println("Dame nº máximo de aleatorios a generar");
+        int max = teclado.nextInt();
+
+        while(max <= 0){
+            System.out.println("Dame un valor mayor que 0");
+            max++;
+        }
+
+        pruebas.generarNumeros(max);
+        Utilidades.hacerPausa();
+        Utilidades.borrarPantalla();
         
+        System.out.println("Teclea altura de la letra N");
+        int valido = teclado.nextInt();
+
+        while(valido <= 3 && valido >= 10){
+            System.out.println("Altura incorrecta, teclea altura de la letra N (3<= altura <= 10): ");
+        }
         
-        
+        pruebas.escribirLetraN(valido);
     }
 }
 
