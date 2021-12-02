@@ -1,13 +1,13 @@
 import java.util.Scanner;
+import java.util.Scanner;
 
 /**
  * Incluye todo el código dentro del main()
  * No declares ningún nuevo método en esta clase ni atributos
- *  
+ *      @author Carlos Alonso
  */
-public class TestPracticaBucles
+public class TestPracticaBucles 
 {
-
     /**
      *  Punto de entrada a la aplicación
      *  - define y crea el teclado  
@@ -23,12 +23,32 @@ public class TestPracticaBucles
      *  - muestra la letra N
      *  
      */
-    public static void main(String[] args)    {
-        //TODO
+    public static void main(String[] args)   
+    {
+        int numerosAGenerar;
+        int valorAlturaN;
+        Scanner teclado = new Scanner(System.in);
+        PracticaBucles practica = new PracticaBucles();
+
+        // Generar numeros aleatorios.
         
         
         
+            numerosAGenerar = teclado.nextInt();
         
+        while (numerosAGenerar <= 0);
+        practica.generarNumeros(numerosAGenerar);
+
+        Utilidades.hacerPausa();
+        Utilidades.borrarPantalla();
+
+        // Imprimir N con una altura especifica.
+        
+        
+            valorAlturaN = teclado.nextInt();
+        
+        while (valorAlturaN < 3 || valorAlturaN > 10);
+        practica.escribirLetraN(valorAlturaN);
     }
 }
 

@@ -2,6 +2,7 @@ import java.util.Scanner;
 /**
  *   Clase de utilidades
  *   Incluye métodos estáticos
+ *       @author Carlos Alonso
  */
 public class Utilidades
 {
@@ -10,7 +11,8 @@ public class Utilidades
     /**
      *  Hacer una pausa  
      */
-    public static void hacerPausa()    {
+    public static void hacerPausa()
+    {
         System.out.println("\n\n\tIntro para continuar");
         teclado.nextLine();
 
@@ -19,7 +21,8 @@ public class Utilidades
      /**
      *  Borrar la pantalla
      */
-    public static void borrarPantalla()    {
+    public static void borrarPantalla() 
+    {
         System.out.print('\u000C');
 
     }
